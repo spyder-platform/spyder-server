@@ -1,3 +1,3 @@
 module.exports = function(app){
-	app.routes = {};
+	app.use('/api/account', require('./account')(app));
 };

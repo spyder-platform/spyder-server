@@ -4,7 +4,7 @@ module.exports = function (app) {
 
 		res.send({
 			success: true,
-			data   : null,
+			data: null,
 			message: "Déconnexion réussie."
 		});
 	};
