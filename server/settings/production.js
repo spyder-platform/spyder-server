@@ -1,5 +1,5 @@
 module.exports = {
-	port     : 80,
-	db       : 'mongodb://localhost:27017/coderpower-api',
-	sessionDb: 'mongodb://localhost:27017/coderpower-prod-session-db'
+	ip: '176.31.127.127',
+	port: 3000,
+	db: 'mongodb://localhost:27017/spyder-api'
 };
