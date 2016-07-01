@@ -11,6 +11,6 @@ var api = express();
 }());
 
 (function start() {
-	api.listen(api.settings.port, '0.0.0.0');
-	console.log('Server listening on port :port'.replace(':port', api.settings.port));
+	api.listen(api.settings.port, app.settings.ip);
+	console.log('Server listening at :ip::port'.replace(':ip', api.settings.ip).replace(':port', api.settings.port));
 }());
