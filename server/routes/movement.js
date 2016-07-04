@@ -28,5 +28,10 @@ module.exports = function (app) {
 		app.actions.movement.show
 	);
 
+	router.delete('/:id',
+		app.middlewares.authenticated,
+		app.actions.movement.delete
+	);
+
 	return router;
 };

@@ -1,6 +1,5 @@
 module.exports = function (app) {
 	return function (req, res, next) {
-		console.log(req.query);
 		app.models.Token.findOne({
 			_id: req.query.token
 		}).then(function (instance) {

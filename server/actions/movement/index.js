@@ -2,6 +2,7 @@ module.exports = function (app) {
 	return {
 		list: require('./list')(app),
 		show: require('./show')(app),
-		create: require('./create')(app)
+		create: require('./create')(app),
+		delete: require('./delete')(app)
 	}
 };
