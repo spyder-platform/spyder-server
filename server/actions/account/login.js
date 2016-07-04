@@ -14,10 +14,14 @@ module.exports = function (app) {
 				});
 			}
 
-			res.send({
-				success: true,
-				data: instance,
-				message: 'Connexion réussie.'
+			app.models.Token.create({
+				user: instance._id
+			}).then(function(token) {
+				res.send({
+					success: true,
+					data: token,
+					message: 'Connexion réussie.'
+				});
 			});
 		})
 	};

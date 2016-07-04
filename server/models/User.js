@@ -20,6 +20,12 @@ module.exports = function (app) {
 
 	UserSchema.plugin(require('mongoose-timestamp'));
 
+	UserSchema.methods.toJSON = function() {
+		var obj = this.toObject();
+		delete obj.password;
+		return obj
+	};
+
 	var User = app.mongoose.model('User', UserSchema);
 	return User;
 };

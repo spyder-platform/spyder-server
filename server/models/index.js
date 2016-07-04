@@ -5,4 +5,6 @@ module.exports = function (app) {
 
 	app.models = {};
 	app.models.User = require('./User')(app);
+	app.models.Token = require('./Token')(app);
+	app.models.Movement = require('./Movement')(app);
 };
