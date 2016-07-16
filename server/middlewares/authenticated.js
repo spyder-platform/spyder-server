@@ -2,7 +2,7 @@ module.exports = function (app) {
 	return function (req, res, next) {
 		app.models.Token.findOne({
 			_id: req.query.token
-		}).then(function (instance) {
+		}, function (err, instance) {
 			if (!instance) {
 				return res.status(401).send({
 					success: false,
