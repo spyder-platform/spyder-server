@@ -3,13 +3,6 @@ module.exports = function (app) {
 		app.models.Token.findOne({
 			_id: req.query.token
 		}, function (err, instance) {
-			if(err) {
-				return res.status(500).send({
-					success: false,
-					message: err
-				});
-			}
-
 			if (!instance) {
 				return res.status(401).send({
 					success: false,
