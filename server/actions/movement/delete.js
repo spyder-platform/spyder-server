@@ -8,7 +8,7 @@ module.exports = function(app){
 		}).then(function(movement) {
 			fs.unlink(path.resolve('storage') + '/' + movement.path, function(err) {
 				if(err) {
-					res.status(500).send({
+					return res.status(500).send({
 						success: false,
 						message: 'Une erreur est survenue à la suppréssion du fichier'
 					})
