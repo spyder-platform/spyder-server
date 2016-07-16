@@ -6,7 +6,7 @@ module.exports = function (app) {
 			if(err) {
 				return res.status(500).send({
 					success: false,
-					message: 'Une erreur est survenue.'
+					message: err
 				});
 			}
 
