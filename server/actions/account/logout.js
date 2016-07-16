@@ -4,7 +4,7 @@ module.exports = function (app) {
 			_id: req.query.token
 		}, function(err) {
 			if(err) {
-				res.status(500).send({
+				return res.status(500).send({
 					success: false,
 					message: 'Une erreur est survenue.'
 				});

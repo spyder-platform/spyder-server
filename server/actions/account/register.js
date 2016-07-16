@@ -2,7 +2,6 @@ var sha1 = require('sha1');
 
 module.exports = function(app){
 	return function(req, res, next){
-		console.log(req.body);
 		var user = new app.models.User({
 			firstname: req.body.firstname,
 			lastname: req.body.lastname,
