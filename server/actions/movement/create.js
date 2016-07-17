@@ -1,20 +1,20 @@
 var gcm = require('node-gcm');
 
-var sender = new gcm.Sender('AIzaSyCWJvHft-oVhjx0MGwL-ZJBNuwWnrGRKQM');
-var message = new gcm.Message({
-	collapseKey: 'new_movement',
-	priority: 'high',
-	contentAvailable: true,
-	delayWhileIdle: true,
-	data: {},
-	notification: {
-		title: "Nouveau mouvement !",
-		icon: "ic_group_work_black_24dp",
-		body: "Un nouveau mouvement est survenu."
-	}
-});
-
 module.exports = function(app){
+	var sender = new gcm.Sender(app.settings.gcmApiKey);
+	var message = new gcm.Message({
+		collapseKey: 'new_movement',
+		priority: 'high',
+		contentAvailable: true,
+		delayWhileIdle: true,
+		data: {},
+		notification: {
+			title: "Nouveau mouvement !",
+			icon: "ic_group_work_black_24dp",
+			body: "Un nouveau mouvement est survenu."
+		}
+	});
+
 	return function(req, res, next){
 		app.models.Token.findOne({
 			_id: req.query.token
