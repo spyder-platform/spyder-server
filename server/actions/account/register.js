@@ -6,6 +6,7 @@ module.exports = function(app){
 			firstname: req.body.firstname,
 			lastname: req.body.lastname,
 			email: req.body.email,
+			device: req.body.device,
 			password: sha1(req.body.password)
 		});
 

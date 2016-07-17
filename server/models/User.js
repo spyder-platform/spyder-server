@@ -12,6 +12,10 @@ module.exports = function (app) {
 			type: String,
 			required: true
 		},
+		device: {
+			type: String,
+			required: true
+		},
 		password: {
 			type: String,
 			required: true
