@@ -2,12 +2,10 @@ var gcm = require('node-gcm');
 
 var sender = new gcm.Sender('AIzaSyCWJvHft-oVhjx0MGwL-ZJBNuwWnrGRKQM');
 var message = new gcm.Message({
-	collapseKey: 'demo',
+	collapseKey: 'new_movement',
 	priority: 'high',
 	contentAvailable: true,
 	delayWhileIdle: true,
-	timeToLive: 3,
-	dryRun: true,
 	data: {},
 	notification: {
 		title: "Nouveau mouvement !",
